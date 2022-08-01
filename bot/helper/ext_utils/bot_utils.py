@@ -216,12 +216,12 @@ def get_readable_message():
                 msg += f'\n<b>├ Req By :</b> <a href="https://t.me/c/{str(download.message.chat.id)[4:]}/{download.message.message_id}">{download.message.from_user.first_name}</a>'
                 msg += f"\n<b>├ Engine :</b> {download.eng()}"
                 try:
-                    msg += f"\n<b>∘ Seeders:</b> {download.aria_download().num_seeders}" \
+                    msg += f"\n<b>├ Seeders:</b> {download.aria_download().num_seeders}" \
                            f" | <b>∘ Peers:</b> {download.aria_download().connections}"
                 except:
                     pass
                 try:
-                    msg += f"\n<b>Seeders:</b> {download.torrent_info().num_seeds}" \
+                    msg += f"\n<b>├ Seeders:</b> {download.torrent_info().num_seeds}" \
                            f" | <b>Leechers:</b> {download.torrent_info().num_leechs}"
                 except:
                     pass
