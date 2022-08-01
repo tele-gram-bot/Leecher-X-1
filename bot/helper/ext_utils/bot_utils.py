@@ -196,7 +196,7 @@ def get_readable_message():
             msg += f"\n\n╭─────────────────────⍟\n<b>├ File Name:</b> <code>{escape(str(download.name()))}</code>"
             msg += f"\n<b>├ Status:</b> <i>{download.status()}</i>"
             if download.status() not in [MirrorStatus.STATUS_SEEDING]:
-                msg += f"\n├ {get_progress_bar_string(download)}\n<b>├ Progress:</b> {download.progress()}"
+                msg += f"\n<b>├ {get_progress_bar_string(download)}</b>\n<b>├ Progress:</b> {download.progress()}"
                 if download.status() in [MirrorStatus.STATUS_DOWNLOADING,
                                          MirrorStatus.STATUS_WAITING,
                                          MirrorStatus.STATUS_PAUSE]:
@@ -242,7 +242,7 @@ def get_readable_message():
                 break
         if len(msg) == 0:
             return None, None
-        bmsg = f"\n<b>────────────────────────────</b>"
+        bmsg = f"\n<b>──────────────────────────</b>"
         bmsg += f"\n<b>Disk:</b> {get_readable_file_size(disk_usage(DOWNLOAD_DIR).free)}"
         bmsg += f"<b> | UPTM:</b> {get_readable_time(time() - botStartTime)}"
         dlspeed_bytes = 0
